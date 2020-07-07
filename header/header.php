@@ -1,4 +1,7 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/db/db.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/db/db.php";
+header("Pragma: no-cache");
+header("Cache-Control: no-cache, must-revalidate");
+?>
 <!doctype html>
 <head>
     <meta charset="UTF-8">
