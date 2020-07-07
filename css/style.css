@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+/* 전체 옵션 */
+* {
+    margin: 0 auto;
+    padding: 0px;
+    font-family: 'Malgun gothic','Sans-Serif','Arial';
+}
+a {
+    text-decoration: none;
+    color:#333;
+}
+ul li {
+    list-style:none;
+}
+
+.btn-link {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* 공통 */
+.fl {
+    float:left;
+}
+.tc {
+    text-align:center;
+}
+
+/* 게시판 목록 */
+#board_area {
+    width: 900px;
+    position: relative;
+}
+.list-table {
+    margin-top: 40px;
+}
+.list-table thead th{
+    height:40px;
+    border-top:2px solid #09C;
+    border-bottom:1px solid #CCC;
+    font-weight: bold;
+    font-size: 17px;
+}
+.list-table tbody td{
+    text-align:center;
+    padding:10px 0;
+    border-bottom:1px solid #CCC; height:20px;
+    font-size: 14px
+}
+#write_btn {
+    position: absolute;
+    margin-top:20px;
+    right: 0;
+}
+
+#user_btn {
+    position: absolute;
+    margin-top: auto;
+    right: 0;
+}
+
+/* 게시판 글쓰기 */
+#board_write {
+    width:900px;
+    position:relative;
+    margin:0 auto;
+}
+#write_area {
+    margin-top:70px;
+    font-size:14px;
+}
+#in_name {
+    margin-top:30px;
+}
+#in_name textarea {
+    font-weight:bold;
+    font-size:26px;
+    color:#333;
+    width: 900px;
+    border:none;
+    resize: none;
+}
+#in_title {
+    margin-top:30px;
+}
+#in_title textarea {
+    font-weight:bold;
+    font-size:26px;
+    color:#333;
+    width: 900px;
+    border:none;
+    resize: none;
+}
+.wi_line {
+    border:solid 1px lightgray;
+    margin-top:10px;
+}
+#in_content {
+    margin-top:10px;
+}
+#in_content textarea {
+    font-size:14px;
+    color:#333;
+    width: 900px;
+    height: 200px;
+    resize: none;
+}
+#in_pw input {
+    font-size:14px;
+    margin-top:10px;
+}
+.bt_se {
+    margin-top:20px;
+    text-align:center;
+}
+.bt_se button {
+    width:100px;
+    height:30px;
+}
+
+.bt_se input {
+    width: 100px;
+    height: 30px;
+}
+
+#logined_writer {
+    font-size: 26px;
+}
+
+/* 게시판 read */
+#board_read {
+    width:900px;
+    position: relative;
+    word-break:break-all;
+}
+#user_info {
+    font-size:14px;
+}
+#user_info ul li {
+    float:left;
+    margin-left:10px;
+}
+#bo_line {
+    width:880px;
+    height:2px;
+    background: gray;
+    margin-top:20px;
+}
+#bo_content {
+    margin-top:20px;
+    border: solid lightgray 1px;
+    height: 100px;
+}
+#bo_ser {
+    font-size:14px;
+    color:#333;
+    position: absolute;
+    right: 0;
+}
+#bo_ser > ul > li {
+    float:left;
+    margin-left:10px;
+    margin-top: 10px;
+}
+
+/* 회원가입 */
+span {
+    font-size: 50px;
+}
+#signup_form {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#signup_area {
+    width: 500px;
+    height: 200px;
+    margin-top:30px;
+    font-size:14px;
+    text-align: center;
+}
+
+.form {
+    width: 300px;
+    display: inline;
+}
+.form > div {
+    display: flex;
+    padding-bottom: 7px;
+    align-items: center;
+}
+
+#signup_area button {
+    margin-top: 10px;
+}
+
+label {
+    padding-left: 20px;
+    text-align: left;
+    width: 50px;
+    display: inline-block;
+}
+
+
+/* 로그인 */
+#login_form {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#login_area {
+    width: 500px;
+    height: 200px;
+    margin-top:30px;
+    font-size:14px;
+    text-align: center;
+}
+
+#login_area button {
+    margin-top: 10px;
+}
+
+#page_num {
+    font-size: 14px;
+    margin-left: 200px;
+    margin-top: 30px;
+}
+
+#page_num ul li {
+    float: left;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.fo_re {
+    font-weight: bold;
+    color: red;
+}
