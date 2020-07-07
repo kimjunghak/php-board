@@ -27,6 +27,7 @@ else{
                <input type='hidden' name='idx' value='$bno'>
                <input type=\"password\" name=\"input_pw\" required>
                <button type='submit'>확인</button>
+               <a href='/read/read.php?idx=$bno'><input type='button' value='취소'/></a>
                </form>";
 }
 

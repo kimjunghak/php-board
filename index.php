@@ -66,11 +66,9 @@
                     <td width="70"><?php echo $board['idx'];?></td>
                     <td width="400"><?php if($board['lock_post'] == 1 && $title != ''){ ?>
                         <a href="/read/lock_read.php?idx=<?php echo $board['idx'];?>"><?php echo $title;?>
-                            <?php } else if($board['lock_post'] == 0 && $title != '') {?>
-                            <a href="/read/read.php?idx=<?php echo $board['idx'];?>"><?php echo $title;?>
                             <?php } else {?>
-                                삭제된 글입니다.
-                    <?php } ?>
+                                <a href="/read/read.php?idx=<?php echo $board['idx'];?>"><?php echo $title;?>
+                            <?php } ?>
                     <td width="120"><?php echo $board['name'];?></td>
                     <td width="100"><?php echo $board['date'];?></td>
                     <td width="100"><?php echo $board['hit'];?></td>
