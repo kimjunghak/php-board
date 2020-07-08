@@ -1,5 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/db/db.php";
+header("Pragma: no-cache");
+header("Cache-Control: no-cache, must-revalidate");
 
 $admin_pw = '!@#qweasd!@#';
 $bno = $_POST['idx'];

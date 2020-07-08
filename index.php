@@ -24,30 +24,33 @@
                 </thead>
                 <?php
                     if(isset($_POST['page'])){
-                        $page=$_POST['page'];
+                        $cur_page=$_POST['page'];
                     }
 //                    if(isset($_GET['page'])) {
 //                        $cur_page=$_GET['page'];
 //                    }
                     else {
-                        $page=1;
+                        $cur_page=1;
                     }
+
                     $page_sql=mq("select * from board");
 
                     $total_list=mysqli_num_rows($page_sql);
-                    $page_size=10;
+                    $page_size=5;
+                    $block_size=5;
 
                     $total_page=ceil($total_list/$page_size);
+                    $total_block=ceil($total_page/$block_size);
 
-                    $cur_page=ceil($page/$page_size);
+                    $cur_block=ceil($cur_page/$block_size);
 
-                    $page_start=ceil(($cur_page-1)*$page_size)+1;
-                    $page_end=$page_start + $page_size - 1;
+                    $page_start=ceil(($cur_block-1)*$block_size)+1;
+                    $page_end=$page_start + $block_size - 1;
 
                     if($page_end > $total_page)
                         $page_end = $total_page;
-                    $start_num = ($page-1) * $page_size;
 
+                    $start_num = ($cur_page-1) * $page_size;
 
                     $order_sql = mq("select * from board order by idx desc limit $start_num, $page_size");
                     while ($board = $order_sql->fetch_array()) {
@@ -79,44 +82,48 @@
         <div id="page_num">
             <ul>
                 <?php
-                    if($page <= 1)
+                    if($cur_page <= 1)
                         echo "<li class='fo_re'>처음</li>";
                     else {
                         echo "<form action=\"/\" method=\"post\">
                                 <li><button type=\"submit\" name=\"page\" value=\"1\" class=\"btn-link\">처음</button></li>
                               </form>";
                     }
-                    if($page >= 1){
-                        if($page == 1){
-                            echo "<li><a href='?page=1'>이전</a></li>";
+                    if($cur_page >= 1){
+                        if($cur_page - $block_size < 1){
+                            echo "<form action=\"/\" method=\"post\">
+                                <li><button type=\"submit\" name=\"page\" value=\"1\" class=\"btn-link\">이전</button></li>
+                              </form>";
                         }
                         else {
-                            $pre = $page - 1;
+                            $pre = $cur_page - $block_size;
                             echo "<form action=\"/\" method=\"post\">
                                 <li><button type=\"submit\" name=\"page\" value=\"$pre\" class=\"btn-link\">이전</button></li>
                               </form>";
                         }
                     }
                     for($i=$page_start ; $i<=$page_end ; $i++){
-                        if($page==$i)
+                        if($cur_page==$i)
                             echo "<li class='fo_re'>[$i]</li>";
                         else
                             echo "<form action=\"/\" method=\"post\">
                                 <li><button type=\"submit\" name=\"page\" value=\"$i\" class=\"btn-link\">[$i]</button></li>
                                 </form>";
                     }
-                    if($page <= $total_page){
-                        if($page == $total_page){
-                            echo "<li><a href='?page=$total_page'>다음</a></li>";
+                    if($cur_page <= $total_page){
+                        if($cur_page + $block_size > $total_page){
+                            echo "<form action=\"/\" method=\"post\">
+                                <li><button type=\"submit\" name=\"page\" value=\"$total_page\" class=\"btn-link\">다음</button></li>
+                              </form>";
                         }
                         else {
-                            $next = $page + 1;
+                            $next = $cur_page + $block_size;
                             echo "<form action=\"/\" method=\"post\">
                                     <li><button type=\"submit\" name=\"page\" value=\"$next\" class=\"btn-link\">다음</button></li>
                                   </form>";
                         }
                     }
-                    if($page >= $total_page){
+                    if($cur_page >= $total_page){
                         echo "<li class='fo_re'>끝</li>";
                     }
                     else{

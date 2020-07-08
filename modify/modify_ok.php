@@ -1,6 +1,9 @@
 <?php
     include $_SERVER['DOCUMENT_ROOT']."/db/db.php";
 
+    header("Pragma: no-cache");
+    header("Cache-Control: no-cache, must-revalidate");
+
     $bno = $_GET['idx'];
     $username = $_POST['name'];
     $userpw = $_POST['pw'];
