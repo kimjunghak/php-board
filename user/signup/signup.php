@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/header/header.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/header/html_header.php";
 ?>
     <div id="signup_form">
         <span>회원가입</span>

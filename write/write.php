@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/header/header.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/header/html_header.php";
 ?>
     <div id="board_write">
         <h1><a href="/">자유게시판</a></h1>

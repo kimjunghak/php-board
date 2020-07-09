@@ -1,4 +1,6 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/header/header.php";
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/header/html_header.php";
+include $_SERVER['DOCUMENT_ROOT']."/header/db_header.php";
+
 $bno = $_GET['idx'];
 $sql = mq("select * from board where idx='$bno';");
 $board = $sql->fetch_array();

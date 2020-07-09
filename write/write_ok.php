@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . "/db/db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/header/db_header.php";
 header("Pragma: no-cache");
 header("Cache-Control: no-cache, must-revalidate");
 

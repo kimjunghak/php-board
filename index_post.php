@@ -1,5 +1,5 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/header/html_header.php";
-?>
+include $_SERVER['DOCUMENT_ROOT']."/header/db_header.php";?>
 <div id="board_area">
     <h1><a href="/">자유게시판</a></h1>
     <div id="user_btn">
@@ -12,20 +12,10 @@
             <a href="/user/login/login.php"><button>로그인</button></a>
         <?php } ?>
     </div>
-
-    <?php require_once 'table_ajax.php' ?>
+    <?php require 'table.php' ?>
 
     <div id="write_btn">
         <a href="/write/write.php"><button>글쓰기</button></a>
     </div>
 </div>
-<script>
-    function pagination(obj) {
-        var page = $(obj).val();
-
-        $.post('table.php', {"page": page}, function (data) {
-            $('.list_n_page').html(data);
-        });
-    }
-</script>
 </body>
