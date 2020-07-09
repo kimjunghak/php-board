@@ -12,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header/db_header.php";?>
             <a href="/user/login/login.php"><button>로그인</button></a>
         <?php } ?>
     </div>
-    <?php require 'table.php' ?>
+    <?php require 'page/table.php' ?>
 
     <div id="write_btn">
         <a href="/write/write.php"><button>글쓰기</button></a>

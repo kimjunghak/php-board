@@ -13,7 +13,7 @@
         <?php } ?>
     </div>
 
-    <?php require_once 'table_ajax.php' ?>
+    <?php require_once 'page/table_ajax.php' ?>
 
     <div id="write_btn">
         <a href="/write/write.php"><button>글쓰기</button></a>
@@ -23,7 +23,7 @@
     function pagination(obj) {
         var page = $(obj).val();
 
-        $.post('table.php', {"page": page}, function (data) {
+        $.post('page/table_ajax.php', {"page": page}, function (data) {
             $('.list_n_page').html(data);
         });
     }
